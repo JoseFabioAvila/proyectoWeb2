@@ -1,0 +1,7 @@
+{
+  cocique : "http://ventadebienes.coocique.fi.cr/",
+  bac: "http://search.viviendabac.com/Desktop/Index.aspx?pLocationType=PROYECTOS&pState=CRC.SJO&pBeds=0&pBaths=0&pSize=0"
+  bcr: "http://www.bancobcr.com/bienes/bienes_propiedades.html",
+  bn: "https://www.bnventadebienes.com/properties/search",
+  bp: "http://ventadebienes-bp.com/buscardor/?property-id=&location=any&canton=any&type=any&min-price=any&max-price=any&min-area=&max-area="
+}
