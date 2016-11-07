@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['web']], function(){
+    Route::resource('user','UserController');
+});
+
+Route::group(['middleware' => ['web']], function(){
+    Route::resource('bien','BienController');
+});
