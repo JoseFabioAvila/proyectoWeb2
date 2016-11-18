@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['web']], function(){
-    Route::resource('user','UserController');
-});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => ['web']], function(){
-    Route::resource('bien','BienController');
+    Route::resource('/bien', 'BienController');
 });

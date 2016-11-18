@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Bien;
-
 class BienController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +24,7 @@ class BienController extends Controller
      */
     public function index()
     {
-        $bienes = Bien::all();
-        return view('bien.index',['bienes' => $bienes]);
+        //
     }
 
     /**
@@ -26,7 +34,7 @@ class BienController extends Controller
      */
     public function create()
     {
-        return view('bien.create');
+        //
     }
 
     /**
@@ -37,32 +45,7 @@ class BienController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'canton'=>'required',
-            'provincia'=>'required',
-            'distrito'=>'required',
-            'localizacion'=>'required',
-            'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
-            'precio'=>'required',
-            'entidad'=>'required',
-            'contacto_email'=>'required',
-        ]);
-        $bien = new Bien;
-        $bien->canton = $request->canton;
-        $bien->provincia = $request->provincia;
-        $bien->distrito = $request->distrito;
-        $bien->localizacion = $request->localizacion;
-        $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
-        $bien->precio = $request->precio;
-        $bien->entidad = $request->entidad;
-        $bien->contacto_email = $request->contacto_email;
-        $bien->save();
-
-        return redirect('bien')->with('message','data has been updated!');
+        //
     }
 
     /**
@@ -73,11 +56,7 @@ class BienController extends Controller
      */
     public function show($id)
     {
-        $bien = Bien::find($id);
-        if(!$bien){
-            abort(404);
-        }
-        return view('bien.detail')->with('bien',$bien);
+        //
     }
 
     /**
@@ -88,11 +67,7 @@ class BienController extends Controller
      */
     public function edit($id)
     {
-        $bien = Bien::find($id);
-        if(!$bien){
-            abort(404);
-        }
-        return view('bien.edit')->with('bien',$bien);
+        //
     }
 
     /**
@@ -104,32 +79,7 @@ class BienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'canton'=>'required',
-            'provincia'=>'required',
-            'distrito'=>'required',
-            'localizacion'=>'required',
-            'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
-            'precio'=>'required',
-            'entidad'=>'required',
-            'contacto_email'=>'required',
-        ]);
-        $bien = Bien::find($id);
-        $bien->canton = $request->canton;
-        $bien->provincia = $request->provincia;
-        $bien->distrito = $request->distrito;
-        $bien->localizacion = $request->localizacion;
-        $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
-        $bien->precio = $request->precio;
-        $bien->entidad = $request->entidad;
-        $bien->contacto_email = $request->contacto_email;
-        $bien->save();
-
-        return redirect('bien')->with('message','data has been edited!');
+        //
     }
 
     /**
