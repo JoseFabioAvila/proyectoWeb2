@@ -25,6 +25,7 @@ class CreateBienTable extends Migration
           $table->string('precio');
           $table->string('entidad');
           $table->string('contacto_email');
+          $table->string('habilitado');
           //$table->json('comentarios');
           /*
           [{

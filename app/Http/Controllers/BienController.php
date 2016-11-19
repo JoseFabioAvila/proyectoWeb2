@@ -59,6 +59,7 @@ class BienController extends Controller
             'precio'=>'required',
             'entidad'=>'required',
             'contacto_email'=>'required',
+            ''
         ]);
         $bien = new Bien;
         $bien->canton = $request->canton;
