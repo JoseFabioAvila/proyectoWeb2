@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/contact', 'ContactController@index');
 
 Route::group(['middleware' => ['web']], function(){
     Route::resource('/bien', 'BienController');
