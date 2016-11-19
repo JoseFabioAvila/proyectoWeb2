@@ -11,21 +11,16 @@
     <title> Proyecto Web </title>
 
     <!-- Styles -->
-    <link rel='stylesheet' href='css/animations.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/styles.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/revslider/css/settings.min.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='fontello/css/fontello.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='fontello/css/fontello.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/settings.css' type='text/css' media='all' />
     <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/core.animation.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/shortcodes.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/skin.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/responsive.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/mediaelement/mediaelementplayer.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/mediaelement/wp-mediaelement.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/shortcodes.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/skin.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/core.animation.css' type='text/css' media='all' />
     <link rel='stylesheet' href='js/core.customizer/front.customizer.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/core.messages/core.messages.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/magnific/magnific-popup.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/swiper/idangerous.swiper.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/core.messages/core.messages.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/magnific/magnific-popup.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/swiper/idangerous.swiper.css' type='text/css' media='all' />
 </head>
 <body>
     <div id="app">
@@ -77,7 +72,7 @@
                           <div class="contact_logo">
                               <div class="logo">
                                   <a href="index.html">
-                                      <div class="logo_text"><em>Examen</em> Web</div>
+                                      <div class="logo_text"><em>Proyecto</em> Web</div>
                                       <div class="cL"></div>
                                       <div class="logo_slogan">Intro.Desarrollo de aplicciones web</div>
                                   </a>
@@ -104,6 +99,7 @@
           </div>
       </header>
       <!-- /end header -->
+      </br>
       @yield('content')
 
       <!-- footer copyright and socials -->
@@ -169,26 +165,23 @@
         <a href="#" class="scroll_to_top icon-up show" title="Scroll to top"></a>
     <!--  /to_top button -->
 
+
     <!-- All Scripts -->
     <script type='text/javascript' src='js/jquery/jquery.js'></script>
     <script type='text/javascript' src='js/popup.js'></script>
     <script type='text/javascript' src='js/packed.js'></script>
-    <script type='text/javascript' src='js/swiper/lightbox.min.js'></script>
-    <script type='text/javascript' src='js/revslider/js/jquery.themepunch.revolution.min.js'></script>
-    <script type='text/javascript' src='js/revslider/js/jquery.themepunch.tools.min.js'></script>
-    <script type="text/javascript" src="js/revslider/js/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="js/revslider/js/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="js/revslider/js/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="js/revslider/js/revolution.extension.parallax.min.js"></script>
-    <script type='text/javascript' src='js/revslider/js/slider_function.min.js'></script>
-    <script type='text/javascript' src='js/skin.customizer.min.js'></script>
+    <script type='text/javascript' src='js/essential-grid/lightbox.min.js'></script>
+    <script type='text/javascript' src='js/essential-grid/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='js/essential-grid/jquery.themepunch.essential.min.js'></script>
+    <script type='text/javascript' src='js/skin.customizer.js'></script>
     <script type='text/javascript' src='js/_main.js'></script>
     <script type='text/javascript' src='js/jquery/jquery.slidemenu.min.js'></script>
     <script type='text/javascript' src='js/core.utils.min.js'></script>
     <script type='text/javascript' src='js/core.init.min.js'></script>
     <!-- <script type="text/javascript" src="js/core.customizer/front.customizer.js"></script> -->
     <script type='text/javascript' src='js/shortcodes.min.js'></script>
-
+    <script type='text/javascript' src='js/magnific/jquery.magnific-popup.min.js'></script>
+    <script type='text/javascript' src='js/isotope.pkgd.min.js'></script>
     <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyDn9UB2wvA0MzFebL3wLl2KeRys14X2GBw'></script>
     <script type='text/javascript' src='js/google-map/core.googlemap.min.js'></script>
     <!-- All Scripts -->

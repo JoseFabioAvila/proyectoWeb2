@@ -54,12 +54,13 @@ class BienController extends Controller
             'distrito'=>'required',
             'localizacion'=>'required',
             'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
+            'tamaño'=>'required',
+            'cuartos'=>'required',
+            'baños'=>'required',
             'precio'=>'required',
             'entidad'=>'required',
             'contacto_email'=>'required',
-            ''
+            'venta_alquiler' =>'required',
         ]);
         $bien = new Bien;
         $bien->canton = $request->canton;
@@ -67,11 +68,13 @@ class BienController extends Controller
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
+        $bien->tamaño = $request->tamaño;
+        $bien->cuartos = $request->cuartos;
+        $bien->baños = $request->baños;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
         $bien->contacto_email = $request->contacto_email;
+        $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 
         return redirect('bien')->with('message','data has been updated!');
@@ -117,16 +120,18 @@ class BienController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'canton'=>'required',
-            'provincia'=>'required',
-            'distrito'=>'required',
-            'localizacion'=>'required',
-            'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
-            'precio'=>'required',
-            'entidad'=>'required',
-            'contacto_email'=>'required',
+          'canton'=>'required',
+          'provincia'=>'required',
+          'distrito'=>'required',
+          'localizacion'=>'required',
+          'descripcion'=>'required',
+          'tamaño'=>'required',
+          'cuartos'=>'required',
+          'baños'=>'required',
+          'precio'=>'required',
+          'entidad'=>'required',
+          'contacto_email'=>'required',
+          'venta_alquiler'=>'required',
         ]);
         $bien = Bien::find($id);
         $bien->canton = $request->canton;
@@ -134,11 +139,13 @@ class BienController extends Controller
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
+        $bien->tamaño = $request->tamaño;
+        $bien->cuartos = $request->cuartos;
+        $bien->baños = $request->baños;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
         $bien->contacto_email = $request->contacto_email;
+        $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 
         return redirect('bien')->with('message','data has been edited!');

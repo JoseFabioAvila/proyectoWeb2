@@ -13,23 +13,6 @@
                           Home
                       </a>
                   </li>
-                  <li class="menu-item-has-children">
-                      <a href="#">
-                          Features
-                      </a>
-                      <ul class="sub-menu">
-                          <li class="menu-item">
-                              <a href="search-results.html">
-                                  Search Results
-                              </a>
-                          </li>
-                          <li class="menu-item">
-                              <a href="appointment.html">
-                                  Appointment
-                              </a>
-                          </li>
-                      </ul>
-                  </li>
                   <li class="current-menu-item">
                       <a href="{{ url('/contact') }}">
                           Contact Us
@@ -92,7 +75,7 @@
         <div class="contacts_wrap_left">
             <div class="logo">
                 <a href="index.html">
-                    <div class="logo_text"><em>Examen</em> Web</div>
+                    <div class="logo_text"><em>Proyecto</em> Web</div>
                     <div class="cL"></div>
                     <div class="logo_slogan">Intro.Desarrollo de Aplicaciones Web </div>
                     <div class="cL"></div>

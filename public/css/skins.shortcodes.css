@@ -1020,7 +1020,7 @@ button.sc_button_size_large,
 .sc_property_search_keyword,
 .sc_property_search_location,
 .sc_property_search_type_single {
-	width: 31.650%;
+	width: 29.650%;
 }
 .sc_property_search_bedrooms,
 .sc_property_search_bathrooms,
@@ -1060,7 +1060,7 @@ label.sc_property_search_price_max{
 .sc_property_search_bedrooms,
 .sc_property_search_bathrooms {
 	position: relative;
-	
+
 }
 
 #sc_property_search_location,
@@ -1090,7 +1090,7 @@ label.sc_property_search_price_max{
 }
 */
 
-.TabsPropertySearch {}	
+.TabsPropertySearch {}
 .TabsPropertySearch .sc_tabs_title_box {
 	-webkit-box-shadow: 0px 39px 56.4px 3.6px rgba(0, 0, 0, 0.24);
 	-moz-box-shadow: 0px 39px 56.4px 3.6px rgba(0, 0, 0, 0.24);
@@ -1321,13 +1321,13 @@ label.sc_property_search_price_max{
 	color: #8c8c8c;
 }
 .sc_property_item_meta .bedrooms:before {
-	content: '\e8ee';	
+	content: '\e8ee';
 }
 .sc_property_item_meta .bathrooms:before {
-	content: '\e8ed';	
+	content: '\e8ed';
 }
 .sc_property_item_meta .garages:before {
-	content: '\e8ef';	
+	content: '\e8ef';
 }
 
 
@@ -1479,13 +1479,3 @@ label.sc_property_search_price_max{
 .fields label {
 	color: #343434;
 }
-
-
-
-
-
-
-
-
-
-
