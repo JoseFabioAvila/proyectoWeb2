@@ -47,7 +47,7 @@
   <!-- .page_content_wrap> -->
   <div class="wrapper">
       <div id="sc_googlemap_1" class="sc_googlemap" data-zoom="16" data-style="default">
-          <div id="sc_googlemap_2" class="sc_googlemap_marker" data-title="" data-description="" data-address="1, Central Road, Chicago" data-latlng="" data-point="images/map_marker.png">
+          <div id="sc_googlemap_2" class="sc_googlemap_marker" data-title="" data-description="" data-address="Quesada, San Carlos, Costa Rica" data-latlng="10.348668,-84.433179" data-point="images/map_marker.png">
           </div>
       </div>
   </div>

@@ -189,7 +189,7 @@
     <!-- <script type="text/javascript" src="js/core.customizer/front.customizer.js"></script> -->
     <script type='text/javascript' src='js/shortcodes.min.js'></script>
 
-    <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyAA8O_i6YWSOXQn1vd9SSiIriIqewvBFWk'></script>
+    <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyDn9UB2wvA0MzFebL3wLl2KeRys14X2GBw'></script>
     <script type='text/javascript' src='js/google-map/core.googlemap.min.js'></script>
     <!-- All Scripts -->
 </body>
