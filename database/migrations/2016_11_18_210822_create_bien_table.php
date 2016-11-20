@@ -15,16 +15,22 @@ class CreateBienTable extends Migration
     {
         Schema::create('bienes', function (Blueprint $table) {
           $table->increments('id');
+
           $table->string('canton');
           $table->string('provincia');
           $table->string('distrito');
+
           $table->string('localizacion');
           $table->text('descripcion');
-          $table->string('lote');
-          $table->string('contruccion');
+          $table->string('tamano');
+
+          $table->string('cuartos');
+          $table->string('banos');
           $table->string('precio');
+
           $table->string('entidad');
           $table->string('contacto_email');
+          $table->string('venta_alquiler');
           $table->string('habilitado');
           //$table->json('comentarios');
           /*

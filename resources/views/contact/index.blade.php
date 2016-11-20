@@ -1,31 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-<!-- top_panel_bottom -->
-<div class="top_panel_bottom">
-    <div class="content_wrap clearfix">
-        <a href="#" class="menu_main_responsive_button icon-down">Home</a>
-          <!--responsive_main_menu -->
-          <nav class="menu_main_nav_area">
-              <ul id="menu_main" class="menu_main_nav">
-                  <li class="menu-item">
-                      <a href="{{ url('/home') }}">
-                          Home
-                      </a>
-                  </li>
-                  <li class="current-menu-item">
-                      <a href="{{ url('/contact') }}">
-                          Contact Us
-                      </a>
-                  </li>
-              </ul>
-          </nav>
-          <!--/responsive_main_menu -->
-    </div>
-</div>
-<!-- /top_panel_bottom -->
-@endsection
-
 @section('content')
   <!-- .page_content_wrap> -->
   <div class="wrapper">

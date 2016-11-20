@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Bien;
+use App\Comentario;
+use App\User;
 
 class BienController extends Controller
 {
@@ -52,12 +54,15 @@ class BienController extends Controller
             'canton'=>'required',
             'provincia'=>'required',
             'distrito'=>'required',
+
             'localizacion'=>'required',
             'descripcion'=>'required',
-            'tamaño'=>'required',
+            'tamano'=>'required',
+
             'cuartos'=>'required',
-            'baños'=>'required',
+            'banos'=>'required',
             'precio'=>'required',
+
             'entidad'=>'required',
             'contacto_email'=>'required',
             'venta_alquiler' =>'required',
@@ -68,16 +73,17 @@ class BienController extends Controller
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->tamaño = $request->tamaño;
+        $bien->tamano = $request->tamano;
         $bien->cuartos = $request->cuartos;
-        $bien->baños = $request->baños;
+        $bien->banos = $request->banos;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
         $bien->contacto_email = $request->contacto_email;
         $bien->venta_alquiler = $request->venta_alquiler;
+        $bien->habilitado = "habilitado";
         $bien->save();
 
-        return redirect('bien')->with('message','data has been updated!');
+        return redirect('home')->with('message','data has been updated!');
     }
 
     /**
@@ -89,10 +95,15 @@ class BienController extends Controller
     public function show($id)
     {
         $bien = Bien::find($id);
+        $comentarios = Comentario::all();
+        $users = User::all();
         if(!$bien){
             abort(404);
         }
-        return view('bien.detail')->with('bien',$bien);
+        return view('bien.detail')
+        ->with('bien',$bien)
+        ->with('comentarios',$comentarios)
+        ->with('users',$users);
     }
 
     /**
@@ -125,9 +136,9 @@ class BienController extends Controller
           'distrito'=>'required',
           'localizacion'=>'required',
           'descripcion'=>'required',
-          'tamaño'=>'required',
+          'tamano'=>'required',
           'cuartos'=>'required',
-          'baños'=>'required',
+          'banos'=>'required',
           'precio'=>'required',
           'entidad'=>'required',
           'contacto_email'=>'required',
@@ -139,16 +150,16 @@ class BienController extends Controller
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->tamaño = $request->tamaño;
+        $bien->tamano = $request->tamano;
         $bien->cuartos = $request->cuartos;
-        $bien->baños = $request->baños;
+        $bien->banos = $request->banos;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
         $bien->contacto_email = $request->contacto_email;
         $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 
-        return redirect('bien')->with('message','data has been edited!');
+        return redirect('home')->with('message','data has been edited!');
     }
 
     /**

@@ -1,30 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-<!-- top_panel_bottom -->
-<div class="top_panel_bottom">
-    <div class="content_wrap clearfix">
-        <a href="#" class="menu_main_responsive_button icon-down">Home</a>
-          <!--responsive_main_menu -->
-          <nav class="menu_main_nav_area">
-              <ul id="menu_main" class="menu_main_nav">
-                  <li class="current-menu-item">
-                      <a href="{{ url('/home') }}">
-                          Home
-                      </a>
-                  </li>
-                  <li class="menu-item">
-                      <a href="{{ url('/contact') }}">
-                          Contact Us
-                      </a>
-                  </li>
-              </ul>
-          </nav>
-          <!--/responsive_main_menu -->
-    </div>
-</div>
-<!-- /top_panel_bottom -->
-@endsection
 
 @section('content')
   <div class="page_content_wrap page_paddings_yes">
@@ -118,6 +93,45 @@
             </div>
 
             <div class="main_isotope isotope_wrap">
+
+
+            @foreach ($bienes as $bien)
+            <!--div class="main_isotope isotope_wrap"-->
+                <div class="isotope_item isotope_item_property isotope_item_property_3 isotope_column_3">
+                    <div class="post_item post_item_property post_item_property_3 post_format_standard even">
+                        <div class="post_featured">
+                            <div class="post_thumb" data-image="http://placehold.it/370x180">
+                                <a class="hover_icon hover_icon_link" href="/bien/{{$bien->id}}">
+                                    <img alt="{{ $bien->localizacion }}" src="http://placehold.it/370x180">
+                                </a>
+                            </div>
+                            <span class="property_status_list">{{ $bien->venta_alquiler }}</span>
+                        </div>
+
+                        <div class="post_content isotope_item_content">
+                            <div class="property_type_single">{{ $bien->entidad }}</div>
+                            <div class="property_price">${{ $bien->precio }}</div>
+                            <h4 class="post_title">
+                                <a href="#">{{ $bien->provincia }}, {{ $bien->canton }}, {{ $bien->distrito }}</a>
+                            </h4>
+                            <div class="cL"></div>
+                            <div class="post_descr">
+                                <div class="property_area">{{ $bien->tamano }} m2</div>
+                                <div class="property_meta">
+                                    <span class="property-bedrooms">{{ $bien->banos }}</span>
+                                    <span class="property-bathrooms">{{ $bien->cuartos }}</span>
+                                </div>
+                                <div class="cL"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--/div-->
+
+            @endforeach
+            </div>
+
+            <!--div class="main_isotope isotope_wrap">
                 <div class="isotope_item isotope_item_property isotope_item_property_3 isotope_column_3">
                     <div class="post_item post_item_property post_item_property_3 post_format_standard odd">
                         <div class="post_featured">
@@ -148,6 +162,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="isotope_item isotope_item_property isotope_item_property_3 isotope_column_3">
                     <div class="post_item post_item_property post_item_property_3 post_format_standard even">
                         <div class="post_featured">
@@ -292,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div-->
             <nav id="pagination" class="pagination_wrap pagination_pages">
                 <span class="pager_current active">1</span>
                 <a href="#" class="">2</a>

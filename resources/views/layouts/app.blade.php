@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" class="scheme_orange">
+<html lang="en" class="scheme_orange">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,13 +94,49 @@
                       </div>
                   </div>
               </div>
-              <!-- /top_panel_middle -->
-              @yield('header')
+              <!-- /top_panel_middle
+              @yield('header')-->
+              <div class="top_panel_bottom">
+                  <div class="content_wrap clearfix">
+                      <a href="#" class="menu_main_responsive_button icon-down">Home</a>
+                        <!--responsive_main_menu -->
+                        <nav class="menu_main_nav_area">
+                            <ul id="menu_main" class="menu_main_nav">
+                                <li class="current-menu-item">
+                                    <a href="{{ url('/home') }}">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="{{ url('/contact') }}">
+                                        Contact Us
+                                    </a>
+                                </li>
+                                
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        Opciones de Administrador <span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
+                                        <li><a href="{{ url('#') }}">Administrar Usuarios </a></li>
+                                        <li><a href="#"> option 3 </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--/responsive_main_menu -->
+                  </div>
+              </div>
           </div>
       </header>
       <!-- /end header -->
       </br>
+
+
       @yield('content')
+
 
       <!-- footer copyright and socials -->
       <div class="copyright_wrap copyright_style_socials">
