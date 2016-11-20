@@ -11,16 +11,16 @@
     <title> Proyecto Web </title>
 
     <!-- Styles -->
-    <link rel='stylesheet' href='fontello/css/fontello.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/settings.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/shortcodes.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/skin.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='css/core.animation.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/core.customizer/front.customizer.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/core.messages/core.messages.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/magnific/magnific-popup.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='js/swiper/idangerous.swiper.css' type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('fontello/css/fontello.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('css/settings.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('css/style.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('css/shortcodes.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('css/skin.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('css/core.animation.min.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('js/core.customizer/front.customizer.min.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('js/core.messages/core.messages.min.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('js/magnific/magnific-popup.min.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' href="{{ URL::asset('js/swiper/idangerous.swiper.min.css') }}" type='text/css' media='all' />
 </head>
 <body>
     <div id="app">
@@ -112,7 +112,7 @@
                                         Contact Us
                                     </a>
                                 </li>
-                                
+
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                         Opciones de Administrador <span class="caret"></span>

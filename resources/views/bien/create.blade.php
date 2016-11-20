@@ -1,126 +1,75 @@
 @extends('layouts.app')
 
-
 @section('content')
-  <div class="content_wrap">
-      <div class="content">
-          <form class="form-horizontal" role="form" action="{{ url('/bien') }}" method="post">
-
-            <div class="form-group">
-                <label for="provincia" class="col-md-4 control-label">Provincia</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="provincia" value="">
-                  {{ ($errors->has('provincia')) ? $errors->first('provincia') : '' }}
+<div class="wrapper contact_form_main">
+  <div class="sc_content content_wrap">
+      <h1 class="sc_title sc_title_regular sc_align_center contact_text" >Crear Bien</h1>
+        <div class="sc_contact_form sc_contact_form_standard sc_contact_form_style_1">
+            <form class="form-horizontal" role="form" action="{{ url('/bien') }}" method="post">
+              <!-- Column 1 -->
+              <div class="sc_contact_form_info">
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="provincia">Provincia</label>
+                  <input type="text" name="provincia" placeholder="Provincia">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="canton" class="col-md-4 control-label">Canton</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="canton" value="">
-                  {{ ($errors->has('canton')) ? $errors->first('canton') : '' }}
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="canton">Canton</label>
+                  <input id="sc_contact_form_email" type="text" name="canton" placeholder="Canton">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="distrito" class="col-md-4 control-label">Distrito</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="distrito" value="">
-                  {{ ($errors->has('distrito')) ? $errors->first('distrito') : '' }}
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="distrito">Distrito</label>
+                  <input id="sc_contact_form_subj" type="text" name="distrito" placeholder="Distrito">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="localizacion" class="col-md-4 control-label">Localizacion</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="localizacion" value="">
-                  {{ ($errors->has('localizacion')) ? $errors->first('localizacion') : '' }}
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="localizacion">Localizacion</label>
+                  <input id="" type="text" name="localizacion" placeholder="Localizacion">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="descripcion" class="col-md-4 control-label">Descripcion</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="descripcion" value="">
-                  {{ ($errors->has('descripcion')) ? $errors->first('descripcion') : '' }}
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="descripcion">Descripcion</label>
+                  <input id="" type="text" name="descripcion" placeholder="Descripcion">
                 </div>
-            </div>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="tamano">Tamaño</label>
+                  <input id="" type="text" name="tamano" placeholder="Tamaño">
+                </div></br>
+              </div>
+              <!-- Column 2 -->
+              <div class="sc_contact_form_item sc_contact_form_message label_over">
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="cuartos">Cuartos</label>
+                  <input id="" type="text" name="cuartos" placeholder="Cuartos">
+                </div></br>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="banos">Baños</label>
+                  <input id="" type="text" name="banos" placeholder="Baños">
+                </div></br>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="precio">Precio</label>
+                  <input id="" type="text" name="precio" placeholder="Precio">
+                </div></br>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="entidad">Entidad</label>
+                  <input id="" type="text" name="entidad" placeholder="Entidad">
+                </div></br>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="contacto_email">Contacto</label>
+                  <input id="" type="text" name="contacto_email" placeholder="Contacto">
+                </div></br>
+                <div class="sc_contact_form_item sc_contact_form_field label_over">
+                  <label class="required" for="venta_alquiler">Venta Alquiler</label>
+                  <input id="" type="text" name="venta_alquiler" placeholder="Venta Alquiler">
+                </div></br>
+              </div>
 
-            <div class="form-group">
-                <label for="tamano" class="col-md-4 control-label">Tamaño</label>
 
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="tamano" value="">
-                  {{ ($errors->has('tamano')) ? $errors->first('tamano') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="cuartos" class="col-md-4 control-label">Cuartos</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="cuartos" value="">
-                  {{ ($errors->has('cuartos')) ? $errors->first('cuartos') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="banos" class="col-md-4 control-label">Baños</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="banos" value="">
-                  {{ ($errors->has('banos')) ? $errors->first('banos') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="precio" class="col-md-4 control-label">Precio</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="precio" value="">
-                  {{ ($errors->has('precio')) ? $errors->first('precio') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="entidad" class="col-md-4 control-label">Entidad</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="entidad" value="">
-                  {{ ($errors->has('entidad')) ? $errors->first('entidad') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="contacto_email" class="col-md-4 control-label">Contacto Email</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="contacto_email" value="">
-                  {{ ($errors->has('contacto_email')) ? $errors->first('contacto_email') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="venta_alquiler" class="col-md-4 control-label">Venta Alquiler</label>
-
-                <div class="col-md-6">
-                  <input class="form-control" type="text" name="venta_alquiler" value="">
-                  {{ ($errors->has('venta_alquiler')) ? $errors->first('venta_alquiler') : '' }}
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input class="btn btn-primary btn-block" type="submit" name="name" value="Crear">
-                </div>
-            </div>
-        </form>
-    </div>
+              <div class="sc_contact_form_item sc_contact_form_button">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <button type="submit" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">
+                  Crear
+                </button>
+              </div>
+            </form>
+        </div>
   </div>
+</div>
 @endsection

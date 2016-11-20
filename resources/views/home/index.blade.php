@@ -308,13 +308,6 @@
                     </div>
                 </div>
             </div-->
-            <nav id="pagination" class="pagination_wrap pagination_pages">
-                <span class="pager_current active">1</span>
-                <a href="#" class="">2</a>
-                <a href="#" class="">3</a>
-                <a href="#" class="pager_next "></a>
-                <a href="#" class="pager_last "></a>
-            </nav>
         </div>
     </div>
   </div>
