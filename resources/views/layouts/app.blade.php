@@ -71,7 +71,7 @@
                       <div class="columns_wrap columns_fluid">
                           <div class="contact_logo">
                               <div class="logo">
-                                  <a href="index.html">
+                                  <a href="{{ url('/home') }}">
                                       <div class="logo_text"><em>Proyecto</em> Web</div>
                                       <div class="cL"></div>
                                       <div class="logo_slogan">Intro.Desarrollo de aplicciones web</div>

@@ -170,6 +170,13 @@ class BienController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $bien = Bien::find($id);
+      if($bien->habilitado == "habilitado")
+        $bien->habilitado = "deshabilitado";
+      else
+        $bien->habilitado = "habilitado";
+      $bien->save();
+
+      return redirect('bien');
     }
 }

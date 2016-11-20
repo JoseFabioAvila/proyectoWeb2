@@ -25,7 +25,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
-                            <li><a href="{{ url('#') }}">Administrar Bienes </a></li>
+                            <li><a href="{{ url('/bien') }}">Administrar Bienes </a></li>
                             <li><a href="{{ url('#') }}">Administrar Usuarios </a></li>
                         </ul>
                     </li>
@@ -132,6 +132,7 @@
 
 
             @foreach ($bienes as $bien)
+              @if($bien->habilitado == "habilitado")
             <!--div class="main_isotope isotope_wrap"-->
                 <div class="isotope_item isotope_item_property isotope_item_property_3 isotope_column_3">
                     <div class="post_item post_item_property post_item_property_3 post_format_standard even">
@@ -163,7 +164,7 @@
                     </div>
                 </div>
             <!--/div-->
-
+              @endif
             @endforeach
             </div>
 
