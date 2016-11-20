@@ -1,6 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="wrapper contact_form_main">
+  <div class="sc_content content_wrap">
+      <h1 class="sc_title sc_title_regular sc_align_center contact_text" >Login</h1>
+      <div class="sc_contact_form sc_contact_form_standard sc_contact_form_style_1">
+          <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+            <div class="sc_contact_form_item sc_contact_form_field label_over">
+              <label class="required" for="email">Correo</label>
+              <input type="email" name="email" placeholder="Correo">
+            </div></br>
+            <div class="sc_contact_form_item sc_contact_form_field label_over">
+              <label class="required" for="password">Contraseña</label>
+              <input type="password" name="password" placeholder="Contraseña">
+            </div></br>
+
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember"> Recuerdame
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="sc_contact_form_item sc_contact_form_button">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <button type="submit" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">
+                Iniciar Sesion
+              </button>
+              <button type="submit" class="btn btn-primary">
+                  Login
+              </button>
+            </div>
+          </form>
+          <a class="btn btn-link" href="{{ url('/password/reset') }}">
+              Forgot Your Password?
+          </a>
+      </div>
+  </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -22,7 +62,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div> 
+                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>

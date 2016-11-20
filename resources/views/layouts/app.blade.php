@@ -94,41 +94,8 @@
                       </div>
                   </div>
               </div>
-              <!-- /top_panel_middle
-              @yield('header')-->
-              <div class="top_panel_bottom">
-                  <div class="content_wrap clearfix">
-                      <a href="#" class="menu_main_responsive_button icon-down">Home</a>
-                        <!--responsive_main_menu -->
-                        <nav class="menu_main_nav_area">
-                            <ul id="menu_main" class="menu_main_nav">
-                                <li class="current-menu-item">
-                                    <a href="{{ url('/home') }}">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{ url('/contact') }}">
-                                        Contact Us
-                                    </a>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        Opciones de Administrador <span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
-                                        <li><a href="{{ url('#') }}">Administrar Usuarios </a></li>
-                                        <li><a href="#"> option 3 </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--/responsive_main_menu -->
-                  </div>
-              </div>
+              <!-- /top_panel_middle -->
+              @yield('navbar')
           </div>
       </header>
       <!-- /end header -->
@@ -203,21 +170,21 @@
 
 
     <!-- All Scripts -->
-    <script type='text/javascript' src='js/jquery/jquery.js'></script>
-    <script type='text/javascript' src='js/popup.js'></script>
-    <script type='text/javascript' src='js/packed.js'></script>
-    <script type='text/javascript' src='js/essential-grid/lightbox.min.js'></script>
-    <script type='text/javascript' src='js/essential-grid/jquery.themepunch.tools.min.js'></script>
-    <script type='text/javascript' src='js/essential-grid/jquery.themepunch.essential.min.js'></script>
-    <script type='text/javascript' src='js/skin.customizer.js'></script>
-    <script type='text/javascript' src='js/_main.js'></script>
-    <script type='text/javascript' src='js/jquery/jquery.slidemenu.min.js'></script>
-    <script type='text/javascript' src='js/core.utils.min.js'></script>
-    <script type='text/javascript' src='js/core.init.min.js'></script>
+    <script type='text/javascript' src="{{ URL::asset('js/jquery/jquery.js') }}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/popup.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/packed.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/essential-grid/lightbox.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/essential-grid/jquery.themepunch.tools.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/essential-grid/jquery.themepunch.essential.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/skin.customizer.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/_main.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/jquery/jquery.slidemenu.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/core.utils.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/core.init.min.js')}}"></script>
     <!-- <script type="text/javascript" src="js/core.customizer/front.customizer.js"></script> -->
-    <script type='text/javascript' src='js/shortcodes.min.js'></script>
-    <script type='text/javascript' src='js/magnific/jquery.magnific-popup.min.js'></script>
-    <script type='text/javascript' src='js/isotope.pkgd.min.js'></script>
+    <script type='text/javascript' src="{{URL::asset('js/shortcodes.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/magnific/jquery.magnific-popup.min.js')}}"></script>
+    <script type='text/javascript' src="{{URL::asset('js/isotope.pkgd.min.js')}}"></script>
     <script type='text/javascript' src='http://maps.google.com/maps/api/js?key=AIzaSyDn9UB2wvA0MzFebL3wLl2KeRys14X2GBw'></script>
     <script type='text/javascript' src='js/google-map/core.googlemap.min.js'></script>
     <!-- All Scripts -->
