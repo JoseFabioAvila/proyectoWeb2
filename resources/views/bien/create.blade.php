@@ -26,9 +26,9 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
+                            <li class="current-menu-item"><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
                             <li><a href="{{ url('/bien') }}">Administrar Bienes </a></li>
-                            <li><a href="{{ url('#') }}">Administrar Usuarios </a></li>
+                            <li><a href="{{ url('/user') }}">Administrar Usuarios </a></li>
                         </ul>
                     </li>
                   @endif

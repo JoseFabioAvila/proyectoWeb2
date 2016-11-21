@@ -90,17 +90,19 @@
         									<p>{{ $comentario->comentario }}</p>
         								</div>
         							</div>
-        							<div class="comment_reply">
-                        @if($comentario->habilitado == "true")
-          								<a class="comment-reply-link" href="#" aria-label="Reply to Mike Newton">
-          									Deshabilitar
-          								</a>
-                        @else
-                          <a class="comment-reply-link" href="#" aria-label="Reply to Mike Newton">
-                            Habilitar
-                          </a>
-                        @endif
-        							</div>
+                      @if(Auth::user()->esAdmin == 'true')
+          							<div class="comment_reply">
+                          @if($comentario->habilitado == "true")
+            								<a class="comment-reply-link" href="#" aria-label="Deshabilitar">
+            									Deshabilitar
+            								</a>
+                          @else
+                            <a class="comment-reply-link" href="#" aria-label="Habilitar">
+                              Habilitar
+                            </a>
+                          @endif
+          							</div>
+                      @endif
         						</div>
                   @endif
                 @endforeach
