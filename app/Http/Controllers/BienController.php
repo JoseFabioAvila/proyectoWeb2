@@ -130,20 +130,6 @@ class BienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-          'canton'=>'required',
-          'provincia'=>'required',
-          'distrito'=>'required',
-          'localizacion'=>'required',
-          'descripcion'=>'required',
-          'tamano'=>'required',
-          'cuartos'=>'required',
-          'banos'=>'required',
-          'precio'=>'required',
-          'entidad'=>'required',
-          'contacto_email'=>'required',
-          'venta_alquiler'=>'required',
-        ]);
         $bien = Bien::find($id);
         $bien->canton = $request->canton;
         $bien->provincia = $request->provincia;
@@ -155,7 +141,7 @@ class BienController extends Controller
         $bien->banos = $request->banos;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
-        $bien->contacto_email = $request->contacto_email;
+        $bien->contacto_email = $request->contacto;
         $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 

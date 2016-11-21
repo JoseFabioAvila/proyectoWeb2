@@ -26,7 +26,7 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/bien/create') }}"> Crear Bien </a></li>
-                            <li><a href="{{ url('/bien/edit') }}">Administrar Bienes </a></li>
+                            <li><a href="{{ url('/bien') }}">Administrar Bienes </a></li>
                             <li><a href="{{ url('#') }}">Administrar Usuarios </a></li>
                         </ul>
                     </li>
@@ -94,23 +94,75 @@
               </div>
             </div>
             <div id="sc_tab_2_18_1" class="sc_tabs_content even ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true">
+              <form class="form-horizontal" role="form" action="/bien/{{$bien->id}}" method="post">
+                {{ csrf_field() }}
                 <div class="columns_wrap sc_columns">
-                <div class="column-1_3 sc_column_item">
-                    <ul class="sc_list sc_list_style_ul">
-                        <li>Lorem ipsum</li>
-                    </ul>
+                  <div class="column-1_3 sc_column_item">
+                    <div>
+                        <label for="canton" class="col-md-4 control-label">Canton</label></br>
+                        <input id="canton" type="text" class="form-control" name="canton" value="{{$bien->canton}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="provincia" class="col-md-4 control-label">Provincia</label></br>
+                        <input id="provincia" type="text" class="form-control" name="provincia" value="{{$bien->provincia}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="distrito" class="col-md-4 control-label">Distrito</label></br>
+                        <input id="distrito" type="text" class="form-control" name="distrito" value="{{$bien->distrito}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="localizacion" class="col-md-4 control-label">Localización</label></br>
+                        <input id="localizacion" type="text" class="form-control" name="localizacion" value="{{$bien->localizacion}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="descripcion" class="col-md-4 control-label">Descripción</label></br>
+                        <input id="descripcion" type="text" class="form-control" name="descripcion" value="{{$bien->descripcion}}" required autofocus>
+                    </div>
+                  </div>
+                  <div class="column-1_3 sc_column_item">
+                    <div>
+                        <label for="tamano" class="col-md-4 control-label">Tamaño</label></br>
+                        <input id="tamano" type="text" class="form-control" name="tamano" value="{{$bien->tamano}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="cuartos" class="col-md-4 control-label">Cuartos</label></br>
+                        <input id="cuartos" type="text" class="form-control" name="cuartos" value="{{$bien->cuartos}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="banos" class="col-md-4 control-label">Baños</label></br>
+                        <input id="banos" type="text" class="form-control" name="banos" value="{{$bien->banos}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="precio" class="col-md-4 control-label">Precio</label></br>
+                        <input id="precio" type="text" class="form-control" name="precio" value="{{$bien->precio}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="entidad" class="col-md-4 control-label">Entidad</label></br>
+                        <input id="entidad" type="text" class="form-control" name="entidad" value="{{$bien->entidad}}" required autofocus>
+                    </div>
+                  </div>
+                  <div class="column-1_3 sc_column_item">
+                    <div>
+                        <label for="contacto" class="col-md-4 control-label">Contacto</label></br>
+                        <input id="contacto" type="text" class="form-control" name="contacto" value="{{$bien->contacto_email}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="venta_alquiler" class="col-md-4 control-label">Venta/Alquiler</label></br>
+                        <input id="venta_alquiler" type="text" class="form-control" name="venta_alquiler" value="{{$bien->venta_alquiler}}" required autofocus>
+                    </div>
+                    <div>
+                        <label for="estado" class="col-md-4 control-label">Estado(Habilitado)</label></br>
+                        <input id="estado" type="text" class="form-control" name="estado" value="{{$bien->habilitado}}"  readonly>
+                    </div>
+                    </br>
+                    <div class="">
+                      <input type="hidden" name="_method" value="put">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="submit" name="name" value="Guardar Cambios" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">
+                    </div>
+                  </div>
                 </div>
-                <div class="column-1_3 sc_column_item">
-                    <ul class="sc_list sc_list_style_ul">
-                        <li>Lorem ipsum</li>
-                    </ul>
-                </div>
-                <div class="column-1_3 sc_column_item">
-                  <ul class="sc_list sc_list_style_ul">
-                      <li>Lorem ipsum</li>
-                  </ul>
-                </div>
-              </div>
+              </form>
             </div>
             <div id="sc_tab_6_1" class="sc_tabs_content odd ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true">
               <div class="columns_wrap sc_columns">
