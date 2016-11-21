@@ -41,42 +41,42 @@
   <div class="page_content_wrap page_paddings_yes">
     <div class="content_wrap">
         <div class="content">
-
           <div class="wrapper search_section_main TabsPropertySearch sc_tabs_content">
             <div class="sc_tabs_title_box sc_property_search_box">
-              <form method="get" action="">
+              <form class="form-horizontal" role="form" action="/home/" method="post">
                 <div class="sc_property_search_content">
                   <div class="columns_wrap sc_columns">
                     <div class="column-1_3 sc_column_item">
-                      <label for="canton" class="col-md-4 control-label">Canton</label></br>
-                      <input id="canton" type="text" class="form-control" name="canton" value="" required autofocus>
+                      <label for="provincia" class="col-md-4 control-label">Provincia</label></br>
+                      <input id="provincia" type="text" class="form-control" name="provincia">
                     </div>
                     <div class="column-1_3 sc_column_item">
-                      <label for="provincia" class="col-md-4 control-label">Provincia</label></br>
-                      <input id="provincia" type="text" class="form-control" name="provincia" required autofocus>
+                      <label for="canton" class="col-md-4 control-label">Canton</label></br>
+                      <input id="canton" type="text" class="form-control" name="canton" value="">
                     </div>
                     <div class="column-1_3 sc_column_item">
                       <label for="distrito" class="col-md-4 control-label">Distrito</label></br>
-                      <input id="distrito" type="text" class="form-control" name="distrito" required autofocus>
+                      <input id="distrito" type="text" class="form-control" name="distrito">
                     </div>
                     <div class="column-1_4 sc_column_item">
                       <label for="cantidad_banos" class="col-md-4 control-label">Cantidad de baños</label></br>
-                      <input id="cantidad_banos" type="text" class="form-control" name="cantidad_banos" required autofocus>
+                      <input id="cantidad_banos" type="text" class="form-control" name="cantidad_banos">
                     </div>
                     <div class="column-1_4 sc_column_item">
                       <label for="cantidad_cuartos" class="col-md-4 control-label">Cantidad de Cuartos</label></br>
-                      <input id="cantidad_cuartos" type="text" class="form-control" name="cantidad_cuartos" required autofocus>
+                      <input id="cantidad_cuartos" type="text" class="form-control" name="cantidad_cuartos">
                     </div>
                     <div class="column-1_4 sc_column_item">
                       <label for="precio_minimo" class="col-md-4 control-label">Precio Minimo</label></br>
-                      <input id="precio_minimo" type="text" class="form-control" name="precio_minimo" required autofocus>
+                      <input id="precio_minimo" type="text" class="form-control" name="precio_minimo">
                     </div>
                     <div class="column-1_4 sc_column_item">
                       <label for="precio_maximo" class="col-md-4 control-label">Precio Maximo</label></br>
-                      <input id="precio_maximo" type="text" class="form-control" name="precio_maximo" required autofocus>
+                      <input id="precio_maximo" type="text" class="form-control" name="precio_maximo">
                     </div>
                   </div>
                 </div>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="submit" class="sc_button_size_medium" name="property_search" value="Search">
               </form>
             </div>

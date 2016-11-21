@@ -147,7 +147,7 @@ class BienController extends Controller
         $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 
-        return redirect('home')->with('message','data has been edited!');
+        return redirect('bien')->with('message','data has been edited!');
     }
 
     public function comment(Request $request){
