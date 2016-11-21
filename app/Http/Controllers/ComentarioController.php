@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Comentario;
+use App\User;
 
 class ComentarioController extends Controller
 {
@@ -18,47 +20,32 @@ class ComentarioController extends Controller
       $this->middleware('auth');
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
-  public function store(Request $request, $id)
+  public function store(Request $request)
   {
       $this->validate($request,[
-          'canton'=>'required',
-          'provincia'=>'required',
-          'distrito'=>'required',
-
-          'localizacion'=>'required',
-          'descripcion'=>'required',
-          'tamano'=>'required',
-
-          'cuartos'=>'required',
-          'banos'=>'required',
-          'precio'=>'required',
-
-          'entidad'=>'required',
-          'contacto_email'=>'required',
-          'venta_alquiler' =>'required',
+        'comentario'=>'required',
       ]);
-      $bien = new Bien;
-      $bien->canton = $request->canton;
-      $bien->provincia = $request->provincia;
-      $bien->distrito = $request->distrito;
-      $bien->localizacion = $request->localizacion;
-      $bien->descripcion = $request->descripcion;
-      $bien->tamano = $request->tamano;
-      $bien->cuartos = $request->cuartos;
-      $bien->banos = $request->banos;
-      $bien->precio = $request->precio;
-      $bien->entidad = $request->entidad;
-      $bien->contacto_email = $request->contacto_email;
-      $bien->venta_alquiler = $request->venta_alquiler;
-      $bien->habilitado = "habilitado";
-      $bien->save();
 
-      return redirect('#')->with('message','data has been updated!');
+      $comentario = new Comentario;
+      $comentario->user = Auth::user()->id;
+      $comentario->bien = $request->id_bien;
+      $comentario->comentario = $request->comentario;
+      $comentario->habilitado = "true";
+      $comentario->save();
+      $page = 'bien/';
+      $page .= (string) $request->id_bien;
+      return redirect($page)->with('message','data has been edited!');
+  }
+
+  public function destroy($id)
+  {
+    $comentario = Comentario::find($id);
+    if($comentario->habilitado == "true")
+      $comentario->habilitado = "false";
+    else
+      $comentario->habilitado = "true";
+    $comentario->save();
+
+    return redirect('home');
   }
 }

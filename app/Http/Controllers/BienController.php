@@ -150,22 +150,6 @@ class BienController extends Controller
         return redirect('bien')->with('message','data has been edited!');
     }
 
-    public function comment(Request $request){
-        $this->validate($request,[
-          'comentario'=>'required',
-        ]);
-
-        $comentario = new Comentario;
-        $comentario->user = Auth::user()->id;
-        $comentario->bien = $request->id_bien;
-        $comentario->comentario = $request->comentario;
-        $comentario->habilitado = "true";
-        $comentario->save();
-        $page = 'bien/';
-        $page .= (string) $request->id_bien;
-        return redirect($page)->with('message','data has been edited!');
-    }
-
     /**
      * Remove the specified resource from storage.
      *

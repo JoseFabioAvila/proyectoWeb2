@@ -91,17 +91,22 @@
         								</div>
         							</div>
                       @if(Auth::user()->esAdmin == 'true')
-          							<div class="comment_reply">
-                          @if($comentario->habilitado == "true")
-            								<a class="comment-reply-link" href="#" aria-label="Deshabilitar">
-            									Deshabilitar
-            								</a>
-                          @else
-                            <a class="comment-reply-link" href="#" aria-label="Habilitar">
-                              Habilitar
-                            </a>
-                          @endif
-          							</div>
+                        <?php
+                          $mensaje = "";
+                          if ($comentario->habilitado == "true"):
+                          $mensaje = "Deshabilitar";?>
+                        <?php else:
+                          $mensaje = "Habilitar";?>
+                        <?php endif; ?>
+                        <form class="btn" action="{{ URL::route('comentario.destroy',$comentario['id']) }}" method="POST">
+                          <div class="comment_reply">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button class="comment-reply-link" aria-label="{{$mensaje}}">
+                              {{$mensaje}}
+                            </button>
+                          </div>
+                        </form>
                       @endif
         						</div>
                   @endif
@@ -119,7 +124,7 @@
 			<h2 class="section_title comments_form_title">Agregar Comentario</h2>
 			<div class="comments_form">
 				<div id="respond" class="comment-respond">
-					<form action="{{ url('/bien/comment') }}" method="post" id="commentform" class="comment-form">
+					<form action="{{ url('/comentario') }}" method="post" id="commentform" class="comment-form">
 						<div class="comments_field comments_message">
 							<label for="comentario" class="required">Comentario</label>
 							<textarea id="comment" name="comentario" placeholder="Comentario" aria-required="true"></textarea>
