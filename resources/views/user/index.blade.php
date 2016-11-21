@@ -41,57 +41,44 @@
 
 @section('content')
 <div class="wrapper">
-    <h5 class="sc_title sc_title_regular">Table</h5>
+    <h5 class="sc_title sc_title_regular">Administar Usuarios</h5>
     <div class="sc_line sc_line_style_solid"></div>
         <div class="text_column content_element ">
             <table class="table_shortcodes">
                 <tbody>
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th class="align_left">Description</th>
-                        <th>Price</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>esAdmin</th>
+                        <th>Habilitado</th>
+                        <th>Acciones</th>
                     </tr>
-                    <tr>
-                        <td class="item"><span class="textDark">1</span></td>
-                        <td class="item"><a href="#"><em>Item #1</em></a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur</td>
-                        <td class="item"><span class="textDark"><em>$10</em></span></td>
-                    </tr>
-                    <tr>
-                        <td class="item"><span class="textDark">2</span></td>
-                        <td class="item"><a href="#"><em>Item #2</em></a></td>
-                        <td>Ut enim ad minim veniam</td>
-                        <td class="item"><span class="textDark"><em>$20</em></span></td>
-                    </tr>
-                    <tr>
-                        <td class="item"><span class="textDark">3</span></td>
-                        <td class="item"><a href="#"><em>Item #3</em></a></td>
-                        <td>eiusmod tempor incididunt</td>
-                        <td class="item"><span class="textDark"><em>$70</em></span></td>
-                    </tr>
-                    <tr>
-                        <td class="item"><span class="textDark">4</span></td>
-                        <td class="item"><a href="#"><em>Item #4</em></a></td>
-                        <td>Lorem ipsum dolor sit amet, consectetur</td>
-                        <td class="item"><span class="textDark"><em>$100</em></span></td>
-                    </tr>
-                    <tr>
-                        <td class="item"><span class="textDark">5</span></td>
-                        <td class="item"><a href="#"><em>Item #5</em></a></td>
-                        <td>Ut enim ad minim veniam</td>
-                        <td class="item"><span class="textDark"><em>$350</em></span></td>
-                    </tr>
-                    <tr>
-                        <td class="p1e" colspan="3">
-                        	<span class="textDark">
-                        		<strong>TOTAL</strong>
-                        	</span>
-                        </td>
-                        <td class="p1e item">
-                        	<span class="accent1"><em>$1000</em></span>
-                        </td>
-                    </tr>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td class="item">{{ $user->name }}</td>
+                            <td class="item">{{ $user->email }}</td>
+                            <td class="item">{{ $user->esAdmin }}</td>
+                            <td class="item">{{ $user->habilitado }}</td>
+                            <td>
+                              @if(Auth::user()->name != $user->name)
+                                <div class="columns_wrap sc_columns_count_3">
+                                  <div class="column-1_3 ">
+                                    </div>
+                                    <div class="column-1_3 ">
+                                      <form class="" action="/user/{{ $user->id }}" method="post">
+                                          <input type="hidden" name="_method" value="delete">
+                                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                          <input class="sc_button sc_button_square sc_button_style_filled sc_button_size_small small" type="submit" name="name" value="Deshabilitar">
+                                      </form>
+                                    </div>
+                                    <div class="column-1_3 ">
+                                    </div>
+                                </div>
+                              @endif
+                            </td>
+                        </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

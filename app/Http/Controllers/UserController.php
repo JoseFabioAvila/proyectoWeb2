@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -92,6 +92,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        if($user->habilitado == "true")
+          $user->habilitado = "false";
+        else
+          $user->habilitado = "true";
+        $user->save();
+
+        return redirect('user');
     }
 }
