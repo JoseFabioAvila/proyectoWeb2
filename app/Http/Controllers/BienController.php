@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Bien;
 use App\Comentario;
 use App\User;
+
 
 class BienController extends Controller
 {
@@ -146,6 +148,22 @@ class BienController extends Controller
         $bien->save();
 
         return redirect('home')->with('message','data has been edited!');
+    }
+
+    public function comment(Request $request){
+        $this->validate($request,[
+          'comentario'=>'required',
+        ]);
+
+        $comentario = new Comentario;
+        $comentario->user = Auth::user()->id;
+        $comentario->bien = $request->id_bien;
+        $comentario->comentario = $request->comentario;
+        $comentario->habilitado = "true";
+        $comentario->save();
+        $page = 'bien/';
+        $page .= (string) $request->id_bien;
+        return redirect($page)->with('message','data has been edited!');
     }
 
     /**
