@@ -41,92 +41,46 @@
   <div class="page_content_wrap page_paddings_yes">
     <div class="content_wrap">
         <div class="content">
-            <div class="wrapper search_section_main">
-                <div class="post_content">
-                    <div class="sc_content content_wrap">
-                        <div class="TabsPropertySearch sc_tabs_content">
-                            <div class="sc_tabs_title_box">
-                                  <div class="sc_property_search_box">
-                                      <!-- RENT TAB -->
-                                      <form method="get" action="#">
-                                          <div class="sc_property_search_content">
-                                                      <label class="sc_property_search_location" for="sc_property_search_location">
-                                                      <span>Provincia</span><br>
-                                                      <select id="sc_property_search_location" name="search_location">
-                                                          <option value="-1">Any</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                      </select>
-                                                      </label><label class="sc_property_search_location" for="sc_property_search_location">
-                                                      <span>Provincia</span><br>
-                                                      <select id="sc_property_search_location" name="search_location">
-                                                          <option value="-1">Any</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                          <option  value="Algo">Algo</option>
-                                                      </select>
-                                                      </label><label class="sc_property_search_location" for="sc_property_search_location">
-                                                          <span>Distrito</span><br>
-                                                          <select id="sc_property_search_location" name="search_type_single">
-                                                              <option value="-1">Algo</option>
-                                                              <option  value="Algo">Algo</option>
-                                                              <option  value="Algo">Algo</option>
-                                                          </select>
-                                                              </label>
-                                                      <label class="sc_property_search_bedrooms" for="sc_property_search_bedrooms">
-                                                          <span>Min bedrooms</span><br>
-                                                          <select id="sc_property_search_bedrooms" name="search_bedrooms">
-                                                              <option value="-1">Any</option>
-                                                              <option  value="0">0</option>
-                                                              <option  value="1">1</option>
-                                                              <option  value="2">2</option>
-                                                              <option  value="3">3</option>
-                                                              <option  value="4">4</option>
-                                                              <option  value="5">5</option>
-                                                              <option  value="6">6</option>
-                                                              <option  value="7">7</option>
-                                                              <option  value="8">8</option>
-                                                              <option  value="9">9</option>
-                                                              <option  value="10">10</option>
-                                                          </select>
-                                                      </label><label class="sc_property_search_bathrooms" for="sc_property_search_bathroom">
-                                                          <span>Min bathrooms</span><br>
-                                                          <select id="sc_property_search_bathroom" name="search_bathrooms">
-                                                              <option value="-1">Any</option>
-                                                              <option  value="0">0</option>
-                                                              <option  value="1">1</option>
-                                                              <option  value="2">2</option>
-                                                              <option  value="3">3</option>
-                                                              <option  value="4">4</option>
-                                                              <option  value="5">5</option>
-                                                              <option  value="6">6</option>
-                                                              <option  value="7">7</option>
-                                                              <option  value="8">8</option>
-                                                              <option  value="9">9</option>
-                                                              <option  value="10">10</option>
-                                                          </select>
-                                                      </label><label class="sc_property_search_area_min" for="sc_property_search_area_min2">
-                                                          <span>Min Area (Sq Ft)</span><br>
-                                                          <input id="sc_property_search_area_min2" type="text" name="search_area_min" placeholder="Any" value="" ></label><label class="sc_property_search_area_max" for="sc_property_search_area_max2">
-                                                          <span>Max Area (Sq Ft)</span><br>
-                                                          <input id="sc_property_search_area_max2" type="text" name="search_area_max" placeholder="Any" value="" ></label><label class="sc_property_search_price_min" for="sc_property_search_price_min">
-                                                          <span>Min Price</span><br>
-                                                          <input id="sc_property_search_price_min" type="text" name="search_price_min" placeholder="Any" value="" ></label><label class="sc_property_search_price_max" for="sc_property_search_price_max2">
-                                                          <span>Max Price</span><br>
-                                                          <input id="sc_property_search_price_max2" type="text" name="search_price_max" placeholder="Any" value="" ></label>
-                                          </div>
-                                          <input type="submit" class="sc_button_size_medium" name="property_search" value="Search">
-                                      </form>
-                                      <!-- /RENT TAB -->
-                                  </div>
-                            </div>
-                        </div>
+
+          <div class="wrapper search_section_main TabsPropertySearch sc_tabs_content">
+            <div class="sc_tabs_title_box sc_property_search_box">
+              <form method="get" action="">
+                <div class="sc_property_search_content">
+                  <div class="columns_wrap sc_columns">
+                    <div class="column-1_3 sc_column_item">
+                      <label for="canton" class="col-md-4 control-label">Canton</label></br>
+                      <input id="canton" type="text" class="form-control" name="canton" value="" required autofocus>
                     </div>
+                    <div class="column-1_3 sc_column_item">
+                      <label for="provincia" class="col-md-4 control-label">Provincia</label></br>
+                      <input id="provincia" type="text" class="form-control" name="provincia" required autofocus>
+                    </div>
+                    <div class="column-1_3 sc_column_item">
+                      <label for="distrito" class="col-md-4 control-label">Distrito</label></br>
+                      <input id="distrito" type="text" class="form-control" name="distrito" required autofocus>
+                    </div>
+                    <div class="column-1_4 sc_column_item">
+                      <label for="cantidad_banos" class="col-md-4 control-label">Cantidad de baños</label></br>
+                      <input id="cantidad_banos" type="text" class="form-control" name="cantidad_banos" required autofocus>
+                    </div>
+                    <div class="column-1_4 sc_column_item">
+                      <label for="cantidad_cuartos" class="col-md-4 control-label">Cantidad de Cuartos</label></br>
+                      <input id="cantidad_cuartos" type="text" class="form-control" name="cantidad_cuartos" required autofocus>
+                    </div>
+                    <div class="column-1_4 sc_column_item">
+                      <label for="precio_minimo" class="col-md-4 control-label">Precio Minimo</label></br>
+                      <input id="precio_minimo" type="text" class="form-control" name="precio_minimo" required autofocus>
+                    </div>
+                    <div class="column-1_4 sc_column_item">
+                      <label for="precio_maximo" class="col-md-4 control-label">Precio Maximo</label></br>
+                      <input id="precio_maximo" type="text" class="form-control" name="precio_maximo" required autofocus>
+                    </div>
+                  </div>
                 </div>
+                <input type="submit" class="sc_button_size_medium" name="property_search" value="Search">
+              </form>
             </div>
+          </div>
 
             <div class="main_isotope isotope_wrap">
 

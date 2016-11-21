@@ -7,7 +7,7 @@
           <!--responsive_main_menu -->
           <nav class="menu_main_nav_area">
               <ul id="menu_main" class="menu_main_nav">
-                  <li class=current-"menu-item">
+                  <li class="current-menu-item">
                       <a href="{{ url('/home') }}">
                           Home
                       </a>
@@ -19,7 +19,7 @@
                   </li>
 
                   @if(Auth::user()->esAdmin == 'true')
-                    <li class="current-menu-item dropdown">
+                    <li class="menu-item dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Opciones de Administrador <span class="caret"></span>
                         </a>
@@ -125,11 +125,11 @@
 						<div class="columns_wrap">
 							<div class="comments_field comments_author">
 								<label for="author" class="required">Name</label>
-								<input id="author" name="author" type="text" placeholder="Name *" value="{{Auth::user()->name}}" size="30" aria-required="true">
+								<input id="author" name="author" type="text" placeholder="Name *" value="{{Auth::user()->name}}" size="30" aria-required="true" readonly>
 							</div>
 							<div class="comments_field comments_email">
 								<label for="email" class="required">Email</label>
-								<input id="email" name="email" type="text" placeholder="Email *" value="{{Auth::user()->email}}" size="30" aria-required="true">
+								<input id="email" name="email" type="text" placeholder="Email *" value="{{Auth::user()->email}}" size="30" aria-required="true" readonly>
                 <!--input type="hidden" name="id_user" value="{{ Auth::user()->id }}"-->
                 <input type="hidden" name="id_bien" value="{{ $bien->id }}">
 							</div>

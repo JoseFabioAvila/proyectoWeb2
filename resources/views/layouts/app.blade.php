@@ -35,7 +35,7 @@
                               <!-- menu_user_login -->
                               @if (Auth::guest())
                                 <li class="menu_user_login">
-                                    <a href="#popup_login" class="popup_link popup_login_link">Login</a>
+                                    <a href="{{ url('/login') }}" class="popup_link popup_login_link">Login</a>
                                 </li>
                               @else
                                 <li class="dropdown">

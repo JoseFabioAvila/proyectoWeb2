@@ -27,4 +27,10 @@ class HomeController extends Controller
         $bienes = Bien::all();
         return view('home.index', ['bienes'=>$bienes]);
     }
+
+    public function update(Request $request)
+    {
+        return 'funciona';
+    }
+
 }
