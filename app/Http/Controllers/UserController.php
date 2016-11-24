@@ -93,10 +93,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        if($user->habilitado == "Si")
-          $user->habilitado = "No";
+        if($user->habilitado == "true")
+          $user->habilitado = "false";
         else
-          $user->habilitado = "Si";
+          $user->habilitado = "true";
         $user->save();
 
         return redirect('user');
