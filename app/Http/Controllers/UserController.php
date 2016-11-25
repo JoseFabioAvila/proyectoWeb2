@@ -3,21 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\User;
 
 class UserController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-      $users = User::all();
-      return view('user.index',['users' => $users]);
+        $users = User::all();
+        return view('user.index',['users' => $users]);
     }
 
     /**
@@ -36,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -47,7 +37,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'username'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'administrador'=>'required',
+            'habilitado'=>'required',
+        ]);
+        $user = new User;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->administrador = $request->administrador;
+        $user->habilitado = $request->habilitado;
+        $user->save();
+
+        return redirect('user')->with('message','data has been updated!');
     }
 
     /**
@@ -58,7 +63,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        if(!$user){
+            abort(404);
+        }
+        return view('user.detail')->with('user',$user);
     }
 
     /**
@@ -69,7 +78,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        if(!$user){
+            abort(404);
+        }
+        return view('user.edit')->with('user',$user);
     }
 
     /**
@@ -81,7 +94,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'username'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'administrador'=>'required',
+            'habilitado'=>'required',
+        ]);
+        $user = User::find($id);
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->administrador = $request->administrador;
+        $user->habilitado = $request->habilitado;
+        $user->save();
+
+        return redirect('user')->with('message','data has been updated!');
     }
 
     /**
@@ -92,13 +120,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+      /*$this->validate($request,[
+            'habilitado'=>'required',
+        ]);
         $user = User::find($id);
-        if($user->habilitado == "true")
-          $user->habilitado = "false";
-        else
-          $user->habilitado = "true";
+        $user->habilitado = $request->habilitado;
         $user->save();
-
-        return redirect('user');
+        return redirect('user')->with('message','data has been updated!');*/
     }
 }

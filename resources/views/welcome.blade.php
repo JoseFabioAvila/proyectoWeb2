@@ -62,9 +62,6 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .m-b-md-nav {
-                margin-right: 30px;
-            }
         </style>
     </head>
     <body>
@@ -82,10 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Desarrollo de Apliciones Web
+                    Laravel
                 </div>
-                <div class="title m-b-md">
-                    Proyecto Final
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
