@@ -15,10 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['web']], function(){
-    Route::resource('user','UserController');
+Route::get('/', function () {
+    return view('welcome');
 });
 
+Auth::routes();
+
+
 Route::group(['middleware' => ['web']], function(){
-    Route::resource('bien','BienController');
+    Route::post('/bien/comment', 'BienController@comment');
+    Route::resource('/home', 'HomeController');
+    Route::resource('/contact', 'ContactController');
+    Route::resource('/bien', 'BienController');
+    Route::resource('/comentario', 'ComentarioController');
+    Route::resource('/user','UserController');
 });

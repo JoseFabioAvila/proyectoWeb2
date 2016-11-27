@@ -3,11 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Bien;
+use App\Comentario;
+use App\User;
+
 
 class BienController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,13 +56,18 @@ class BienController extends Controller
             'canton'=>'required',
             'provincia'=>'required',
             'distrito'=>'required',
+
             'localizacion'=>'required',
             'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
+            'tamano'=>'required',
+
+            'cuartos'=>'required',
+            'banos'=>'required',
             'precio'=>'required',
+
             'entidad'=>'required',
             'contacto_email'=>'required',
+            'venta_alquiler' =>'required',
         ]);
         $bien = new Bien;
         $bien->canton = $request->canton;
@@ -55,14 +75,17 @@ class BienController extends Controller
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
+        $bien->tamano = $request->tamano;
+        $bien->cuartos = $request->cuartos;
+        $bien->banos = $request->banos;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
         $bien->contacto_email = $request->contacto_email;
+        $bien->venta_alquiler = $request->venta_alquiler;
+        $bien->habilitado = "habilitado";
         $bien->save();
 
-        return redirect('bien')->with('message','data has been updated!');
+        return redirect('home')->with('message','data has been updated!');
     }
 
     /**
@@ -74,10 +97,15 @@ class BienController extends Controller
     public function show($id)
     {
         $bien = Bien::find($id);
+        $comentarios = Comentario::all();
+        $users = User::all();
         if(!$bien){
             abort(404);
         }
-        return view('bien.detail')->with('bien',$bien);
+        return view('bien.detail')
+        ->with('bien',$bien)
+        ->with('comentarios',$comentarios)
+        ->with('users',$users);
     }
 
     /**
@@ -104,29 +132,19 @@ class BienController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'canton'=>'required',
-            'provincia'=>'required',
-            'distrito'=>'required',
-            'localizacion'=>'required',
-            'descripcion'=>'required',
-            'lote'=>'required',
-            'contruccion'=>'required',
-            'precio'=>'required',
-            'entidad'=>'required',
-            'contacto_email'=>'required',
-        ]);
         $bien = Bien::find($id);
         $bien->canton = $request->canton;
         $bien->provincia = $request->provincia;
         $bien->distrito = $request->distrito;
         $bien->localizacion = $request->localizacion;
         $bien->descripcion = $request->descripcion;
-        $bien->lote = $request->lote;
-        $bien->contruccion = $request->contruccion;
+        $bien->tamano = $request->tamano;
+        $bien->cuartos = $request->cuartos;
+        $bien->banos = $request->banos;
         $bien->precio = $request->precio;
         $bien->entidad = $request->entidad;
-        $bien->contacto_email = $request->contacto_email;
+        $bien->contacto_email = $request->contacto;
+        $bien->venta_alquiler = $request->venta_alquiler;
         $bien->save();
 
         return redirect('bien')->with('message','data has been edited!');
@@ -140,6 +158,13 @@ class BienController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $bien = Bien::find($id);
+      if($bien->habilitado == "habilitado")
+        $bien->habilitado = "deshabilitado";
+      else
+        $bien->habilitado = "habilitado";
+      $bien->save();
+
+      return redirect('bien');
     }
 }
