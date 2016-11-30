@@ -66,7 +66,7 @@
     <div class="login_socials_list">
       <div class="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
         <div class="sc_socials_item">
-          <a href="#" target="_blank" class="social_icons social_facebook">
+          <a href="{{ url('/redirect') }}" target="_blank" class="social_icons social_facebook">
             <span class="icon-facebook"></span>
           </a>
         </div>

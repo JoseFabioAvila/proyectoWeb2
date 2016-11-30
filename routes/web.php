@@ -22,6 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 
+
+
 Route::group(['middleware' => ['web']], function(){
     Route::post('/bien/comment', 'BienController@comment');
     Route::resource('/home', 'HomeController');
@@ -29,4 +31,7 @@ Route::group(['middleware' => ['web']], function(){
     Route::resource('/bien', 'BienController');
     Route::resource('/comentario', 'ComentarioController');
     Route::resource('/user','UserController');
+
+    Route::get('/redirect', 'SocialiteAuthController@redirect');
+    Route::get('/callback', 'SocialiteAuthController@callback');
 });
