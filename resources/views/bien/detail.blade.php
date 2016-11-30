@@ -206,9 +206,6 @@
 
               <div class="column-3_11 sidebar_new">
                   <div class="wrapper">
-                      <a href="contact-us.html" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium aligncenter">
-                          Contact Us
-                      </a>
                       <div class="sc_team_wrap">
                           <div class="sc_team sc_team_style_team-3 sc_slider_nopagination contact_info_sidebar">
                               <h2 class="sc_team_title sc_item_title">Propiedad de {{$bien->entidad}}</h2>
@@ -222,6 +219,11 @@
                           <!-- /.sc_team -->
                       </div>
                       <!-- /.sc_team_wrap -->
+                      <form class="" action="{{ url('/sendemail') }}" method="POST" role="email">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                          <input class="w3-input" name="toEmail" type="hidden" value="{{ Auth::user()->email }}">
+                          <input name="submit" type="submit" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium aligncenter" value="Solicitar Info">
+                      </form>
                   </div>
               </div>
           </div>

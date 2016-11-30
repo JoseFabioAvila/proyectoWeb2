@@ -51,35 +51,50 @@
     <div class="sc_content content_wrap">
         <h1 class="sc_title sc_title_regular sc_align_center contact_text" >Contact Us</h1>
           <div class="sc_contact_form sc_contact_form_standard sc_contact_form_style_1">
-              <form id="sc_contact_form_1" data-formtype="contact" method="post" action="include/sendmail.php">
+              <form id="sc_contact_form_1" data-formtype="contact" method="POST" action="{{ url('/sendemail') }}">
                   <div class="sc_contact_form_info">
                       <div class="sc_contact_form_item sc_contact_form_field label_over">
-                      	<label class="required" for="sc_contact_form_username">Name</label>
-                      	<input id="sc_contact_form_username" type="text" name="username" placeholder="Name *">
+                      	<label class="required" for="username2">Name</label>
+                      	<input id="sc_contact_form_username" type="text" name="username2" placeholder="Name *" value="{{ Auth::user()->name }}"  readonly>
                       </div>
                       <div class="sc_contact_form_item sc_contact_form_field label_over">
-                      	<label class="required" for="sc_contact_form_email">E-mail</label>
-                      	<input id="sc_contact_form_email" type="text" name="email" placeholder="E-mail *">
+                      	<label class="required"  for="toEmail" >E-mail</label>
+                      	<input id="sc_contact_form_email" type="text" name="toEmail" placeholder="E-mail *" value="{{ Auth::user()->email }}"  readonly>
                       </div>
                       <div class="sc_contact_form_item sc_contact_form_field label_over">
                       	<label class="required" for="sc_contact_form_subj">Subject</label>
-                      	<input id="sc_contact_form_subj" type="text" name="subject" placeholder="Subject">
+                      	<input id="sc_contact_form_subj" type="text" name="subject2" placeholder="Subject">
                       </div>
                   </div>
                   <div class="sc_contact_form_item sc_contact_form_message label_over">
-                  	<label class="required" for="sc_contact_form_message">Message</label>
-                  	<textarea id="sc_contact_form_message" name="message" placeholder="Message"></textarea>
-                      <div class="sc_contact_form_item sc_contact_form_button">
-                      	<button type="submit" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium">
-                      		Send Message
-                      	</button>
-                      </div>
+                  	<label class="required" for="message2">Message</label>
+                  	<textarea id="sc_contact_form_message" name="message2" placeholder="Message"></textarea>
+                    <div class="sc_contact_form_item sc_contact_form_button">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input name="submit" type="submit" class="sc_button sc_button_square sc_button_style_filled sc_button_size_medium" value="Enviar">
+                    </div>
                   </div>
+
                   <div class=cL></div>
-                  <div class="result sc_infobox"></div>
               </form>
           </div>
     </div>
+    <!--br>
+    <br>
+    <br>
+    <br>
+    <form class="w3-container" action="sendemail" method="POST" role="email">
+        {{ csrf_field() }}
+        <p>
+            <label>Enter Some Text</label>
+            <textarea class="w3-input" type="text" name="message"></textarea>
+        </p>
+        <p>
+            <label>Email</label> <input class="w3-input" type="email">
+            <input type="submit" name="toEmail" class="w3-btn w3-orange" value="Send">
+        </p>
+    </form-->
+
 </div>
 <!-- </.page_content_wrap> -->
 <footer class="contacts_wrap scheme_orange">

@@ -52,7 +52,6 @@ class BienController extends Controller
      */
     public function store(Request $request)
     {
-      dd('hola');
         $this->validate($request,[
             'canton'=>'required',
             'provincia'=>'required',
