@@ -10,14 +10,14 @@ class SocialAccountService
 
 	public function createOrGetUser(ProviderUser $providerUser){
 
-		    $account = SocialAccountModel::whereProvider('facebook')
+		    $account = SocialAccount::whereProvider('facebook')
 		    ->whereProviderUserId($providerUser->getId())
 		    ->first();
 
 		    if($account){
 		    	return $account->user;
 		    }else{
-		    	$account = new SocialAccountModel([
+		    	$account = new SocialAccount([
 
 		    		'provider_user_id' => $providerUser->getId(),
 		    		'provider' => 'facebook'

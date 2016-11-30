@@ -54,50 +54,50 @@
                 </div>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="canton">Canton</label>
-                  <input id="sc_contact_form_email" type="text" name="canton" placeholder="Canton">
+                  <input type="text" name="canton" placeholder="Canton">
                 </div>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="distrito">Distrito</label>
-                  <input id="sc_contact_form_subj" type="text" name="distrito" placeholder="Distrito">
+                  <input type="text" name="distrito" placeholder="Distrito">
                 </div>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="localizacion">Localizacion</label>
-                  <input id="" type="text" name="localizacion" placeholder="Localizacion">
+                  <input type="text" name="localizacion" placeholder="Localizacion">
                 </div>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="descripcion">Descripcion</label>
-                  <input id="" type="text" name="descripcion" placeholder="Descripcion">
+                  <input type="text" name="descripcion" placeholder="Descripcion">
                 </div>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="tamano">Tamaño</label>
-                  <input id="" type="text" name="tamano" placeholder="Tamaño">
+                  <input type="text" name="tamano" placeholder="Tamaño">
                 </div></br>
               </div>
               <!-- Column 2 -->
               <div class="sc_contact_form_item sc_contact_form_message label_over">
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="cuartos">Cuartos</label>
-                  <input id="" type="text" name="cuartos" placeholder="Cuartos">
+                  <input type="text" name="cuartos" placeholder="Cuartos">
                 </div></br>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="banos">Baños</label>
-                  <input id="" type="text" name="banos" placeholder="Baños">
+                  <input type="text" name="banos" placeholder="Baños">
                 </div></br>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="precio">Precio</label>
-                  <input id="" type="text" name="precio" placeholder="Precio">
+                  <input type="text" name="precio" placeholder="Precio">
                 </div></br>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="entidad">Entidad</label>
-                  <input id="" type="text" name="entidad" placeholder="Entidad">
+                  <input type="text" name="entidad" placeholder="Entidad">
                 </div></br>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="contacto_email">Contacto</label>
-                  <input id="" type="text" name="contacto_email" placeholder="Contacto">
+                  <input type="text" name="contacto_email" placeholder="Contacto">
                 </div></br>
                 <div class="sc_contact_form_item sc_contact_form_field label_over">
                   <label class="required" for="venta_alquiler">Venta Alquiler</label>
-                  <input id="" type="text" name="venta_alquiler" placeholder="Venta Alquiler">
+                  <input type="text" name="venta_alquiler" placeholder="Venta Alquiler">
                 </div></br>
               </div>
 

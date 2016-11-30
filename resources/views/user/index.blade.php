@@ -68,7 +68,11 @@
                                       <form class="" action="/user/{{ $user->id }}" method="post">
                                           <input type="hidden" name="_method" value="delete">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                          <input class="sc_button sc_button_square sc_button_style_filled sc_button_size_small small" type="submit" name="name" value="Deshabilitar">
+                                          @if($user->habilitado == 'Si')
+                                            <input class="sc_button sc_button_square sc_button_style_filled sc_button_size_small small" type="submit" name="name" value="Deshabilitar">
+                                          @else
+                                            <input class="sc_button sc_button_square sc_button_style_filled sc_button_size_small small" type="submit" name="name" value="Habilitar">
+                                          @endif
                                       </form>
                                     </div>
                                     <div class="column-1_3 ">

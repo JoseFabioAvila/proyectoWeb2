@@ -39,36 +39,6 @@
 @endsection
 
 @section('content')
-  <!--div class="isotope_item isotope_item_property isotope_item_property_3 isotope_column_3">
-      <div class="post_item post_item_property post_item_property_3 post_format_standard even">
-          <div class="post_featured">
-              <div class="post_thumb" data-image="http://placehold.it/370x180">
-                  <img alt="{{ $bien->localizacion }}" src="http://placehold.it/370x180">
-              </div>
-              <span class="property_status_list">{{ $bien->venta_alquiler }}</span>
-          </div>
-
-          <div class="post_content isotope_item_content">
-              <div class="property_type_single">{{ $bien->entidad }}</div>
-              <div class="property_price">${{ $bien->precio }}</div>
-              <h4 class="post_title">
-                  <a href="#">{{ $bien->provincia }}, {{ $bien->canton }}, {{ $bien->distrito }}</a>
-              </h4>
-              <h4 class="post_title">
-                  {{ $bien->provincia }}
-              </h4>
-              <div class="cL"></div>
-              <div class="post_descr">
-                  <div class="property_area">{{ $bien->tamano }} m2</div>
-                  <div class="property_meta">
-                      <span class="property-bedrooms">{{ $bien->banos }}</span>
-                      <span class="property-bathrooms">{{ $bien->cuartos }}</span>
-                  </div>
-                  <div class="cL"></div>
-              </div>
-          </div>
-      </div>
-  </div-->
 
   <div class="page_content_wrap page_paddings_no">
       <div class="content_wrap">
@@ -101,76 +71,10 @@
                   </figure>
                   <div class="text_column content_element ">
                       <div class="wrapper">
-                          <p>{{$bien->descripcion}}. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p>{{$bien->descripcion}}</p>
                       </div>
                   </div>
                    <div class="cL"></div>
-                  <h5 class="sc_title sc_title_regular features_amenities">Features &amp; Amenities</h5>
-                  <div class="sc_line sc_line_style_solid"></div>
-                  <div class="sc_content content_wrap">
-                      <div class="columns_wrap sc_columns columns_nofluid sc_columns_count_3">
-                          <div class="column-1_3 sc_column_item sc_column_item_1 odd first">
-                              <ul class="sc_list sc_list_style_iconed">
-                                  <li class="sc_list_item odd first">
-                                      <span class="sc_list_icon icon-checkbox"></span>Floorplans Available
-                                  </li>
-                                  <li class="sc_list_item even" title="Dishwasher">
-                                      <span class="sc_list_icon icon-checkbox"></span>Dishwasher
-                                  </li>
-                                  <li class="sc_list_item odd" title="Dishwasher">
-                                      <span class="sc_list_icon icon-checkbox"></span>Fire place
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="column-1_3 sc_column_item sc_column_item_2 even">
-                              <ul class="sc_list sc_list_style_iconed">
-                                  <li class="sc_list_item odd first">
-                                      <span class="sc_list_icon icon-checkbox"></span>Featured
-                                  </li>
-                                  <li class="sc_list_item even" title="Dishwasher">
-                                      <span class="sc_list_icon icon-checkbox"></span>Laundry in Unit
-                                  </li>
-                                  <li class="sc_list_item odd" title="Dishwasher">
-                                      <span class="sc_list_icon icon-checkbox"></span>Central Heating
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="column-1_3 sc_column_item sc_column_item_3 odd">
-                              <ul class="sc_list sc_list_style_iconed">
-                                  <li class="sc_list_item odd first">
-                                      <span class="sc_list_icon icon-checkbox"></span>Hardwood Floors
-                                  </li>
-                                  <li class="sc_list_item even" title="Dishwasher">
-                                      <span class="sc_list_icon icon-checkbox"></span>2 Stories
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-
-                  <h5 class="sc_title sc_title_regular">Additional Details</h5>
-                  <div class="sc_line sc_line_style_solid"></div>
-                  <div class="text_column content_element  boxStyle1">
-                      <div class="wrapper ad_deals">
-                          <p><strong>AC:</strong>Ceiling Fan(s), Central</p>
-                          <hr>
-                          <p><strong>ACRES:</strong>0.16</p>
-                          <hr>
-                          <p><strong>ACRES SOURCE:</strong>Assessor</p>
-                          <hr>
-                          <p><strong>AP #:</strong>374-493-13</p>
-                          <hr>
-                          <p><strong>APPLIANCES:</strong>Dishwasher, Freestanding Gas Range, Garbage Disposal, Microwave</p>
-                          <hr>
-                          <p><strong>BATHROOM DESCRIPTION:</strong>Stall Shower</p>
-                          <hr>
-                          <p><strong>BEDROOM FEATURES:</strong>Main Floor Master Bedroom</p>
-                          <hr>
-                          <p><strong>CROSS STREETS:</strong>Lincoln and Anchor</p>
-                          <hr>
-                          <p><strong>DINING AREA:</strong>Family Kitchen</p>
-                      </div>
-                  </div>
 
                   <h5 class="sc_title sc_title_regular property_map">property map</h5>
                   <div class="sc_line sc_line_style_solid"></div>
@@ -307,7 +211,7 @@
                       </a>
                       <div class="sc_team_wrap">
                           <div class="sc_team sc_team_style_team-3 sc_slider_nopagination contact_info_sidebar">
-                              <h2 class="sc_team_title sc_item_title">{{$bien->entidad}}</h2>
+                              <h2 class="sc_team_title sc_item_title">Propiedad de {{$bien->entidad}}</h2>
                               <div class="sc_team_item sc_team_item_1 odd first">
                                   <div class="cL"></div>
                                   <div class="post_team_contact_info">
